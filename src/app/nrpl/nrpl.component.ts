@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
-import { DataService } from './data.service';
+import { Component, OnInit } from '@angular/core';
 import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
 
 @Component({
-  selector: 'app-root',
-  templateUrl:'./app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-nrpl',
+  templateUrl: './nrpl.component.html',
+  styleUrls: ['./nrpl.component.scss'],
   animations:[
     trigger('scaleMyParagraph',[
       state('small',style({
@@ -18,17 +17,16 @@ import { trigger,state,style,transition,animate,keyframes } from '@angular/anima
     ])
   ]
 })
+export class NrplComponent implements OnInit {
 
-export class AppComponent {
-  
+
   state:string='small'
   animate(){
     this.state=this.state=='large' ? 'small' : 'large';
   }
+  constructor() { }
 
-
-constructor(private dataService:DataService){
+  ngOnInit() {
+  }
 
 }
-}
-
